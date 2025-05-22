@@ -11,7 +11,7 @@ class Storemy_clientRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,14 @@ class Storemy_clientRequest extends FormRequest
     {
         return [
             //
+            'name' => 'required|string|max:250',
+            'is_project' => 'nullable|string|max:30',
+            'self_capture' => 'nullable|boolean',
+            'client_prefix' => 'required|string|max:4',
+            'client_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'address' => 'nullable|string',
+            'phone_number' => 'nullable|string|max:50',
+            'city' => 'nullable|string|max:50',
         ];
     }
 }

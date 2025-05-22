@@ -41,3 +41,18 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+
+export interface Client {
+    id: number;
+    name: string;
+    slug: string;
+    is_project: boolean;
+    self_capture: boolean;
+    client_prefix: string;
+    client_logo: string | null;
+    address: string;
+    phone_number: string;
+    city: string;
+    created_at: string;
+    updated_at: string;
+}
